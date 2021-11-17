@@ -31,4 +31,8 @@ public class RestaurantService {
     public List<Restaurant> getRestaurants() {
         return restaurants;
     }
+
+    public Integer showOrderTotal(List<Item> items){
+        return items.stream().mapToInt(Item::getPrice).sum();
+    }
 }
